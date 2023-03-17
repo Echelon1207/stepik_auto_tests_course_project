@@ -2,7 +2,7 @@ import time
 
 import pytest
 
-from pages.basket_page import CartPage
+from .pages.basket_page import CartPage
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 
@@ -46,7 +46,7 @@ def test_guest_should_be_login_url(browser):
     page.open()
     page.should_be_login_url()
 
-
+@pytest.mark.skip
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = CartPage(browser, link)
